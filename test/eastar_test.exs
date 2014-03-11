@@ -27,4 +27,11 @@ defmodule Astar.HeapMapTest do
   test "value is retrievable using Access protocol" do
     assert :v = Astar.HeapMap.new.add(1,:k,:v)[:k]
   end
+
+  test "pop gives item with smallest priority" do
+    h = Astar.HeapMap.new.add(1,:k1,:v).add(3,:k3,:v).add(2,:k2,:v)
+    assert {1,_,h} = h.pop
+    assert {2,_,h} = h.pop
+    assert {3,_,_} = h.pop
+  end
 end
