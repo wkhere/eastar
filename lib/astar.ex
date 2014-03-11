@@ -14,24 +14,24 @@ defmodule Astar.HeapMap do
     :gb_trees.size(hmap(self,:tree)) == 0
   end
 
-  def add(pri, key, val, {_mod, tree, dict}) do
+  def add(pri, key, val, hmap(tree: tree, dict: dict)) do
     false = Dict.has_key?(dict, key)
     tree_key = {pri, make_ref}
     hmap(tree: :gb_trees.insert(tree_key, key, tree),
       dict: Dict.put(dict, key, {tree_key, val}))
   end
 
-  def pop({_mod, tree, dict}) do
+  def pop(hmap(tree: tree, dict: dict)) do
     {{pri,_ref}, key, tree1} = :gb_trees.take_smallest(tree)
     {pri, key, hmap(tree: tree1, dict: Dict.delete(dict, key))}
   end
 
-  def get_by_key(key, {_mod, _tree, dict}) do
+  def get_by_key(key, hmap(dict: dict)) do
     {_tree_key, val} = dict[key]
     val
   end
 
-  def delete_by_key(key, {_mod, tree, dict}) do
+  def delete_by_key(key, hmap(tree: tree, dict: dict)) do
     {tree_key, _val} = dict[key]
     hmap(tree: :gb_trees.delete(tree_key, tree),
       dict: Dict.delete(dict, key))
