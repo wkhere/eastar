@@ -34,4 +34,14 @@ defmodule Astar.HeapMapTest do
     assert {2,_,h} = h.pop
     assert {3,_,_} = h.pop
   end
+
+  test "delete_by_key" do
+    h0 = Astar.HeapMap.new
+    h1 = h0.add(1,:k1,:v)
+    h2 = h1.add(3,:k3,:v)
+    h3 = h2.add(2,:k2,:v)
+    assert ^h2 = h3.delete_by_key(:k2)
+    assert ^h1 = h2.delete_by_key(:k3)
+    assert ^h0 = h1.delete_by_key(:k1)
+  end
 end
