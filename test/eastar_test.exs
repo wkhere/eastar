@@ -7,7 +7,7 @@ defmodule Astar.HeapMapTest do
 
   test "add + pop gives empty heap" do
     h0 = Astar.HeapMap.new
-    assert {_,_,h0} = h0.add(1,:k,:v).pop
+    assert {_,_,^h0} = h0.add(1,:k,:v).pop
   end
 
   test "pop from empty heap gives error" do
