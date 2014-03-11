@@ -4,26 +4,26 @@
 
 defmodule Astar.HeapMap do
 
-  defrecordp :attr, Astar.HeapMap,
+  defrecordp :hmap, Astar.HeapMap,
     tree: :gb_trees.empty,
     dict: HashDict.new
 
-  def new(), do: attr()
+  def new(), do: hmap()
 
   def empty?(self) do
-    :gb_trees.size(attr(self,:tree)) == 0
+    :gb_trees.size(hmap(self,:tree)) == 0
   end
 
   def add(pri, key, val, {_mod, tree, dict}) do
     false = Dict.has_key?(dict, key)
     tree_key = {pri, make_ref}
-    attr(tree: :gb_trees.insert(tree_key, key, tree), 
+    hmap(tree: :gb_trees.insert(tree_key, key, tree),
       dict: Dict.put(dict, key, {tree_key, val}))
   end
 
   def pop({_mod, tree, dict}) do
     {{pri,_ref}, key, tree1} = :gb_trees.take_smallest(tree)
-    {pri, key, attr(tree: tree1, dict: Dict.delete(dict, key))}
+    {pri, key, hmap(tree: tree1, dict: Dict.delete(dict, key))}
   end
 
   def get_by_key(key, {_mod, _tree, dict}) do
@@ -33,7 +33,7 @@ defmodule Astar.HeapMap do
 
   def delete_by_key(key, {_mod, tree, dict}) do
     {tree_key, _val} = dict[key]
-    attr(tree: :gb_trees.delete(tree_key, tree), 
+    hmap(tree: :gb_trees.delete(tree_key, tree),
       dict: Dict.delete(dict, key))
   end
 end
