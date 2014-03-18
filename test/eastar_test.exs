@@ -28,6 +28,10 @@ defmodule Astar.HeapMapTest do
     assert :v = Astar.HeapMap.new.add(1,:k,:v)[:k]
   end
 
+  test "mapping returns some internal key and a value" do
+    assert {_,:v} = Astar.HeapMap.new.add(1,:k,:v).mapping(:k)
+  end
+
   test "pop gives item with smallest priority" do
     h = Astar.HeapMap.new.add(1,:k1,:v).add(3,:k3,:v).add(2,:k2,:v)
     assert {1,_,h} = h.pop

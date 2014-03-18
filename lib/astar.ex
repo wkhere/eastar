@@ -26,6 +26,8 @@ defmodule Astar.HeapMap do
     {pri, key, hmap(tree: tree1, dict: Dict.delete(dict, key))}
   end
 
+  def mapping(key, hmap(dict: dict)), do: Dict.get(dict, key)
+
   def get_by_key(key, hmap(dict: dict)) do
     {_tree_key, val} = Dict.get(dict, key)
     val
