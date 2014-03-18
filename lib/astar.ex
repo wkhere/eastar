@@ -27,12 +27,12 @@ defmodule Astar.HeapMap do
   end
 
   def get_by_key(key, hmap(dict: dict)) do
-    {_tree_key, val} = dict[key]
+    {_tree_key, val} = Dict.get(dict, key)
     val
   end
 
   def delete_by_key(key, hmap(tree: tree, dict: dict)) do
-    {tree_key, _val} = dict[key]
+    {tree_key, _val} = Dict.get(dict, key)
     hmap(tree: :gb_trees.delete(tree_key, tree),
       dict: Dict.delete(dict, key))
   end
