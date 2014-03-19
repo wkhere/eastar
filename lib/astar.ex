@@ -58,9 +58,12 @@ defmodule Astar do
     # loop exit - via throw/catch
   end
 
-  defp cons_path(parents, node) do
-    if (parent = parents[node]), 
-    do: cons_path(parents, parent) ++ [node], else: []  
+  defp cons_path(parents, node), do: cons_path(parents, node, [])
+  defp cons_path(parents, node, acc) do
+    if p=Dict.get(parents,node) do
+      cons_path(parents, p, [node|acc])
+    else acc
+    end
   end
 
 end
