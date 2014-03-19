@@ -39,11 +39,6 @@ defmodule Astar.HeapMap do
     {_tree_key, val} = Dict.get(dict, key)
     val
   end
-
-  def delete_by_key(key, self) do
-    {tree_key, _val} = self.mapping(key)
-    self.delete(tree_key, key)
-  end
 end
 
 defimpl Access, for: Astar.HeapMap do
