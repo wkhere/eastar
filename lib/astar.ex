@@ -53,8 +53,7 @@ defmodule Astar do
     parents = HashDict.new
     g0 = 0
     f0 = h.(node, goal)
-    open = Astar.HeapMap.new
-    open = Astar.HeapMap.add open, f0, node0, g0
+    open = Astar.HeapMap.new.add(f0, node0, g0)
     # to be translated yet...
     # loop exit - via throw/catch
   end
