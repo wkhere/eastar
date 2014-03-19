@@ -28,10 +28,6 @@ defmodule Astar.HeapMapTest do
     assert :v = Astar.HeapMap.new.add(1,:k,:v)[:k]
   end
 
-  test "mapping returns some internal key and a value" do
-    assert {_,:v} = Astar.HeapMap.new.add(1,:k,:v).mapping(:k)
-  end
-
   test "pop gives item with smallest priority" do
     h = Astar.HeapMap.new.add(1,:k1,:v).add(3,:k3,:v).add(2,:k2,:v)
     assert {1,_,h} = h.pop
@@ -47,5 +43,26 @@ defmodule Astar.HeapMapTest do
     assert ^h2 = h3.delete_by_key(:k2)
     assert ^h1 = h2.delete_by_key(:k3)
     assert ^h0 = h1.delete_by_key(:k1)
+  end
+
+  test "mapping returns some internal key and a value" do
+    assert {_,:v} = Astar.HeapMap.new.add(1,:k,:v).mapping(:k)
+  end
+
+  test "mapping can be paired with delete" do
+    h0 = Astar.HeapMap.new
+    h1 = h0.add(1,:k1,:v)
+    {tk1,_} = h1.mapping(:k1)
+    assert ^h0 = h1.delete(tk1,:k1)
+  end
+
+  test "mapping can be paired with delete more than once" do
+    h0 = Astar.HeapMap.new
+    h1 = h0.add(1,:k1,:v)
+    {tk1,_} = h1.mapping(:k1)
+    assert ^h0 = h1.delete(tk1,:k1)
+    h2 = h1.add(2,:k2,:v)
+    {tk2,_} = h2.mapping(:k2)
+    assert ^h1 = h2.delete(tk2,:k2)
   end
 end

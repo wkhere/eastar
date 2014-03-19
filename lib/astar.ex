@@ -26,17 +26,23 @@ defmodule Astar.HeapMap do
     {pri, key, hmap(tree: tree1, dict: Dict.delete(dict, key))}
   end
 
-  def mapping(key, hmap(dict: dict)), do: Dict.get(dict, key)
+  def mapping(key, hmap(dict: dict)) do
+    {_tree_key, _val} = Dict.get(dict, key)
+  end
+
+  def delete(tree_key, key, hmap(tree: tree, dict: dict)) do
+    hmap(tree: :gb_trees.delete(tree_key, tree),
+      dict: Dict.delete(dict, key))
+  end
 
   def get_by_key(key, hmap(dict: dict)) do
     {_tree_key, val} = Dict.get(dict, key)
     val
   end
 
-  def delete_by_key(key, hmap(tree: tree, dict: dict)) do
-    {tree_key, _val} = Dict.get(dict, key)
-    hmap(tree: :gb_trees.delete(tree_key, tree),
-      dict: Dict.delete(dict, key))
+  def delete_by_key(key, self) do
+    {tree_key, _val} = self.mapping(key)
+    self.delete(tree_key, key)
   end
 end
 
