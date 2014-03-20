@@ -48,14 +48,54 @@ end
 
 defmodule Astar do
 
-  def astar({h, nbs, dist}, node0, goal) do
-    closedset = HashSet.new
-    parents = HashDict.new
-    g0 = 0
-    f0 = h.(node, goal)
-    open = Astar.HeapMap.new.add(f0, node0, g0)
-    # to be translated yet...
-    # loop exit - via throw/catch
+  def astar({h, _nbs, _dist}=env, node0, goal) do
+    openmap = Astar.HeapMap.new.add(h.(node0,goal), node0, 0)
+
+    loop(env, goal, openmap, HashSet.new, HashDict.new)
+  end
+
+  defp loop({h, nbs, dist}=env, goal, openmap, closedset, parents) do
+    if openmap.is_empty? do []
+    else
+      {_fx, x, openmap} = openmap.pop
+      if x == goal do
+        cons_path(parents, goal)
+      else
+
+        closedset = Set.put(closedset, x)
+
+        {openmap,parents} = Enum.reduce nbs.(x), {openmap,parents},
+        fn(y, {openmap,parents}=continue) ->
+
+          if Set.member?(closedset, y) do continue
+          else
+            est_g = openmap[x] + dist.(x,y)
+
+            {ty, gy} = openmap.mapping(y)
+
+            updater = fn(openmap) ->
+              nparents = Dict.put(parents, y, x)
+              new_gy = est_g
+              fy = h.(y, goal) + new_gy
+              nopenmap = openmap.add(fy, y, new_gy)
+              {nopenmap, nparents}
+            end
+
+            if gy do
+              if est_g < gy do
+                updater.(openmap.delete(ty, y))
+              else
+                continue
+              end
+            else
+              updater.(openmap)
+            end
+          end
+        end
+
+        loop(env, goal, openmap, closedset, parents)
+      end
+    end
   end
 
   defp cons_path(parents, node), do: cons_path(parents, node, [])
@@ -65,5 +105,4 @@ defmodule Astar do
     else acc
     end
   end
-
 end
