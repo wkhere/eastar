@@ -3,7 +3,8 @@ eastar
 
 [![Build Status](https://travis-ci.org/herenowcoder/eastar.svg)](https://travis-ci.org/herenowcoder/eastar)
 
-Elixir rewrite of A\* graph pathfinding code.
+Elixir rewrite of my A\* graph pathfinding code, which I did 
+in Python, Erlang and Racket.
 
 This version aims to be as generic as possible, abstracting away the graph info
 and the heuristic distance - you provide both as funtions.
