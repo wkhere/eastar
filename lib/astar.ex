@@ -1,4 +1,4 @@
-# (c) 2013 Wojciech Kaczmarek
+# (c) 2013,2014 Wojciech Kaczmarek
 # Released under the GPLv2 license - see this for details:
 # http://github.com/herenowcoder/eastar/blob/master/LICENSE
 
