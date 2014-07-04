@@ -52,7 +52,7 @@ defmodule Astar do
   end
 
   defp loop({h, nbs, dist}=env, goal, openmap, closedset, parents) do
-    if HMap.is_empty?(openmap) do []
+    if HMap.empty?(openmap) do []
     else
       {_fx, x, openmap} = HMap.pop(openmap)
       if x == goal do
