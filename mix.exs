@@ -5,7 +5,9 @@ defmodule Eastar.Mixfile do
     [ app: :eastar,
       version: "0.2.0",
       elixir: "~> 0.14.2",
-      deps: deps ]
+      deps: deps,
+      test_coverage: [tool: ExCoveralls]
+    ]
   end
 
   # Configuration for the OTP application
@@ -19,6 +21,6 @@ defmodule Eastar.Mixfile do
   # To specify particular versions, regardless of the tag, do:
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat" }
   defp deps do
-    []
+    [{:excoveralls, "~> 0.3.1",  only: :test}]
   end
 end
