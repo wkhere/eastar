@@ -13,3 +13,5 @@ before_script:
     - mix deps.get
 script: 
     - mix test
+after_success:
+  - mix coveralls.travis
