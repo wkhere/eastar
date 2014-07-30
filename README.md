@@ -2,6 +2,7 @@ eastar
 ======
 
 [![Build Status](https://travis-ci.org/herenowcoder/eastar.svg)](https://travis-ci.org/herenowcoder/eastar)
+[![Coverage Status](https://img.shields.io/coveralls/herenowcoder/eastar.svg)](https://coveralls.io/r/herenowcoder/eastar)
 
 Elixir rewrite of my A\* graph pathfinding code, which I did 
 in Python, Erlang and Racket.
