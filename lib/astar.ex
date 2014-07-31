@@ -10,10 +10,10 @@ defmodule Astar.HeapMap do
     dict: HashDict.new
 
   @opaque t       :: record(:hmap, tree: :gb_trees.tree, dict: Dict.t)
-  @type   pri     :: non_neg_integer
+  @type   pri     :: any
   @type   key     :: any
   @type   val     :: non_neg_integer
-  @opaque token   :: {any, any}
+  @opaque token   :: {pri, any}
 
   @spec new() :: t
   def new(), do: hmap()
