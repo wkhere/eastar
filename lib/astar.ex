@@ -61,12 +61,13 @@ defmodule Astar do
   require Astar.HeapMap, [as: HMap]
 
   @type  vertex     :: any
+  @type  nbs_f      :: ((vertex) -> vertex)
   @type  distance_f :: ((vertex,vertex) -> non_neg_integer)
-  @type  env        :: {distance_f, [vertex], distance_f}
+  @type  env        :: {nbs_f, distance_f, distance_f}
 
   @spec astar(env, vertex, vertex) :: [vertex]
 
-  def astar({h, _nbs, _dist}=env, node0, goal) do
+  def astar({_nbs, _dist, h}=env, node0, goal) do
     openmap = HMap.new
               |> HMap.add(h.(node0,goal), node0, 0)
 
@@ -76,7 +77,7 @@ defmodule Astar do
 
   @spec loop(env, vertex, HMap.t, Set.t, Dict.t) :: [vertex]
 
-  defp loop({h, nbs, dist}=env, goal, openmap, closedset, parents) do
+  defp loop({nbs, dist, h}=env, goal, openmap, closedset, parents) do
     if HMap.empty?(openmap) do []
     else
       {_fx, x, openmap} = HMap.pop(openmap)
