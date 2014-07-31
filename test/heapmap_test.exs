@@ -1,4 +1,4 @@
-defmodule Astar.HeapMapTest do
+defmodule Astar.HeapMap.Test do
   use ExUnit.Case
   import Astar.HeapMap
 
