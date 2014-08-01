@@ -8,13 +8,12 @@ defmodule Astar do
 
   @spec astar(env, vertex, vertex) :: [vertex]
 
-  def astar({_nbs, _dist, h}=env, node0, goal) do
+  def astar({_nbs, _dist, h}=env, start, goal) do
     openmap = HMap.new
-              |> HMap.add(h.(node0,goal), node0, 0)
+              |> HMap.add(h.(start,goal), start, 0)
 
     loop(env, goal, openmap, HashSet.new, HashDict.new)
   end
-
 
   @spec loop(env, vertex, HMap.t, Set.t, Dict.t) :: [vertex]
 
@@ -65,11 +64,11 @@ defmodule Astar do
 
   @spec cons_path(Dict.t, vertex) :: [vertex]
 
-  defp cons_path(parents, node), do: cons_path(parents, node, [])
-  defp cons_path(parents, node, acc) do
-    parent = Dict.get(parents,node)
+  defp cons_path(parents, vertex), do: cons_path(parents, vertex, [])
+  defp cons_path(parents, vertex, acc) do
+    parent = Dict.get(parents,vertex)
     if parent do
-      cons_path(parents, parent, [node|acc])
+      cons_path(parents, parent, [vertex|acc])
     else acc
     end
   end
