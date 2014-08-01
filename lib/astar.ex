@@ -6,6 +6,19 @@ defmodule Astar do
   @type  distance_f :: ((vertex,vertex) -> non_neg_integer)
   @type  env        :: {nbs_f, distance_f, distance_f}
 
+
+  @doc """
+  A* path finding.
+
+  * `env`   - a graph "environment" - the tuple `{nbs, dist, h}` where
+    each element is a function:
+    * `nbs`   - returns collection of neighbor vertices for a given vertex
+    * `dist`  - returns edge cost between two neighbor vertices
+    * `h`     - returns estimated cost between two arbitrary vertices
+  * `start` - starting vertex
+  * `goal`  - vertex we want to reach
+  """
+
   @spec astar(env, vertex, vertex) :: [vertex]
 
   def astar({_nbs, _dist, h}=env, start, goal) do
