@@ -2,7 +2,7 @@ defmodule Astar do
   require Astar.HeapMap, [as: HMap]
 
   @type  vertex     :: any
-  @type  nbs_f      :: ((vertex) -> vertex)
+  @type  nbs_f      :: ((vertex) -> [vertex])
   @type  distance_f :: ((vertex,vertex) -> non_neg_integer)
   @type  env        :: {nbs_f, distance_f, distance_f}
 
