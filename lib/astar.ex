@@ -1,5 +1,5 @@
 defmodule Astar do
-  require Astar.HeapMap, [as: HMap]
+  alias Astar.HeapMap
 
   @type  vertex     :: any
   @type  nbs_f      :: ((vertex) -> [vertex])
@@ -22,18 +22,18 @@ defmodule Astar do
   @spec astar(env, vertex, vertex) :: [vertex]
 
   def astar({_nbs, _dist, h}=env, start, goal) do
-    openmap = HMap.new
-              |> HMap.add(h.(start,goal), start, 0)
+    openmap = HeapMap.new
+              |> HeapMap.add(h.(start,goal), start, 0)
 
     loop(env, goal, openmap, HashSet.new, HashDict.new)
   end
 
-  @spec loop(env, vertex, HMap.t, Set.t, Dict.t) :: [vertex]
+  @spec loop(env, vertex, HeapMap.t, Set.t, Dict.t) :: [vertex]
 
   defp loop({nbs, dist, h}=env, goal, openmap, closedset, parents) do
-    if HMap.empty?(openmap) do []
+    if HeapMap.empty?(openmap) do []
     else
-      {_fx, x, openmap} = HMap.pop(openmap)
+      {_fx, x, openmap} = HeapMap.pop(openmap)
       if x == goal do
         cons_path(parents, goal)
       else
@@ -45,21 +45,21 @@ defmodule Astar do
 
           if Set.member?(closedset, y) do continue
           else
-            est_g = HMap.get_by_key(openmap,x) + dist.(x,y)
+            est_g = HeapMap.get_by_key(openmap,x) + dist.(x,y)
 
-            {ty, gy} = HMap.mapping(openmap,y)
+            {ty, gy} = HeapMap.mapping(openmap,y)
 
             updater = fn(openmap) ->
               nparents = Dict.put(parents, y, x)
               new_gy = est_g
               fy = h.(y, goal) + new_gy
-              nopenmap = openmap |> HMap.add(fy, y, new_gy)
+              nopenmap = openmap |> HeapMap.add(fy, y, new_gy)
               {nopenmap, nparents}
             end
 
             if gy do
               if est_g < gy do
-                updater.(openmap |> HMap.delete(ty, y))
+                updater.(openmap |> HeapMap.delete(ty, y))
               else
                 continue
               end
