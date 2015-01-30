@@ -21,6 +21,6 @@ defmodule Eastar.Mixfile do
   # To specify particular versions, regardless of the tag, do:
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat" }
   defp deps do
-    [{:excoveralls, "== 0.3.4",  only: :test}]
+    [{:excoveralls, "== 0.3.6",  only: :test}]
   end
 end
