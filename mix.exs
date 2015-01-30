@@ -4,7 +4,7 @@ defmodule Eastar.Mixfile do
   def project do
     [ app: :eastar,
       version: "0.3.0-dev",
-      elixir: "~> 0.14.3 or ~> 0.15.0",
+      elixir: "~> 1.0.0",
       deps: deps,
       test_coverage: [tool: ExCoveralls]
     ]
@@ -21,6 +21,6 @@ defmodule Eastar.Mixfile do
   # To specify particular versions, regardless of the tag, do:
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat" }
   defp deps do
-    [{:excoveralls, "~> 0.3.2",  only: :test}]
+    [{:excoveralls, "== 0.3.4",  only: :test}]
   end
 end
