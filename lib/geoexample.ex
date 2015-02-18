@@ -1,8 +1,8 @@
 defmodule Astar.GeoExample do
 
   defmodule Nodes do
-    def walcz,    do: {{53,16,00}, {16,28,00}}
-    def poznan,   do: {{52,24,00}, {16,55,00}}
-    def wwa,      do: {{52,14,00}, {21,01,00}}
+    def walcz,    do: {53.283853, 16.470173}
+    def poznan,   do: {52.408031, 16.920613}
+    def wwa,      do: {52.230069, 21.018513}
   end
 end
