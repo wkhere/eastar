@@ -15,7 +15,7 @@ defmodule Astar.H.Geo.Test do
       {{58,38,39}, {03,04,12}}
       ) |> prec1 == 968.9 
 
-    import Astar.GeoExample
+    import Astar.GeoExample.Nodes
     assert distance(walcz, poznan) |> prec1 == 101.0
     assert distance(walcz, wwa)    |> prec1 == 327.0
     assert distance(poznan, wwa)   |> prec1 == 279.3
