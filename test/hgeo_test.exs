@@ -12,14 +12,14 @@ defmodule Astar.H.Geo.Test do
   def prec(x, 0), do: round(x)
 
   test "coords as degree triples" do
-    assert distance( 
+    assert h(
       {{50,03,59}, {05,42,53}},
       {{58,38,39}, {03,04,12}}
       ) |> prec(1) == 968.9
   end
 
   test "coords as decimal degrees" do
-    assert distance(
+    assert h(
       {20.42,   3.5},
       {23.5,  111.111}
       ) |> prec(0) == 10780
@@ -27,8 +27,8 @@ defmodule Astar.H.Geo.Test do
 
   test "distances between my example nodes" do
     import Astar.GeoExample.Nodes
-    assert distance(walcz, poznan) |> prec(1) == 102.0
-    assert distance(walcz, wwa)    |> prec(1) == 327.7
-    assert distance(poznan, wwa)   |> prec(1) == 279.2
+    assert h(walcz, poznan) |> prec(1) == 102.0
+    assert h(walcz, wwa)    |> prec(1) == 327.7
+    assert h(poznan, wwa)   |> prec(1) == 279.2
   end
 end

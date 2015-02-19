@@ -13,7 +13,7 @@ defmodule Astar.H.Geo do
     (a |> to_deg) * @pi_by_180
 
 
-  def distance({lat1, lon1}, {lat2, lon2}) do
+  def h({lat1, lon1}, {lat2, lon2}) do
     phi1 = lat1 |> to_radian
     phi2 = lat2 |> to_radian
     dphi = ((lat2 |> to_deg) - (lat1 |> to_deg)) |> to_radian
