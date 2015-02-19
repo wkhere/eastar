@@ -9,6 +9,7 @@ defmodule Astar.GeoExample.Test do
   end
 
   test "path of len=1" do
-    assert astar(env, :walcz, :wwa) == [:wwa]
+    assert astar(env, :walcz, :wwa)    == [:wwa]
+    assert astar(env, :wwa,   :walcz)  == [:walcz]
   end
 end
