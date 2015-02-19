@@ -8,7 +8,8 @@ defmodule Astar.HeapMap.Test do
 
   test "add + pop gives empty heap" do
     h0 = new
-    assert {_,_,^h0} = h0 |> add(1,:k,:v) |> pop
+    {_,_,h} = h0 |> add(1,:k,:v) |> pop
+    assert h |> empty?
   end
 
   test "pop from empty heap gives error" do
