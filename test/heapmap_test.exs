@@ -53,4 +53,13 @@ defmodule Astar.HeapMap.Test do
     {tk2,_} = h2 |> mapping(:k2)
     assert ^h1 = h2 |> delete(tk2,:k2)
   end
-end
+
+  test "delete invalidates mapping" do
+    h1 = new |> add(1,:k,:v)
+    {tk,_} = h1 |> mapping(:k)
+    h2 = h1 |> delete(tk,:k)
+    assert_raise MatchError, fn-> h2 |> mapping(:k) end
+    assert_raise MatchError, fn-> h2 |> get_by_key(:k) end
+  end
+
+ end
