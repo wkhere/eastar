@@ -48,7 +48,7 @@ defmodule Astar do
   defp nbs_loop(env, goal, _x, [], st), do:
     loop(env, goal, st)
 
-  defp nbs_loop({_, dist, h}=env, goal, x, [y|ys]=ys0, {openmap, closedset, parents}=st) do
+  defp nbs_loop({_, dist, h}=env, goal, x, [y|ys], {openmap, closedset, parents}=st) do
 
           if Set.member?(closedset, y) do
             nbs_loop(env, goal, x, ys, st)
@@ -58,25 +58,27 @@ defmodule Astar do
 
             {ty, gy} = HeapMap.mapping(openmap,y)
 
+            updater = fn(openmap) ->
+              nparents = Dict.put(parents, y, x)
+              new_gy = est_g
+              fy = h.(y, goal) + new_gy
+              nopenmap = openmap |> HeapMap.add(fy, y, new_gy)
+              {nopenmap, closedset, nparents}
+            end
+
             if gy do
               if est_g < gy do
-                update(env, goal, x, ys0, est_g,
-                  {openmap |> HeapMap.delete(ty, y), closedset, parents})
+                nst = updater.(openmap |> HeapMap.delete(ty, y))
+                nbs_loop(env, goal, x, ys, nst)
               else
                 nbs_loop(env, goal, x, ys, st)
               end
             else
-              update(env, goal, x, ys0, est_g, st)
+              nst = updater.(openmap)
+              nbs_loop(env, goal, x, ys, nst)
             end
           end
 
-  end
-
-  defp update({_ ,_, h}=env, goal, x, [y|ys], new_gy, {openmap, closedset, parents}) do
-    nparents = parents |> Dict.put(y, x)
-    fy = h.(y, goal) + new_gy
-    nopenmap = openmap |> HeapMap.add(fy, y, new_gy)
-    nbs_loop(env, goal, x, ys, {nopenmap, closedset, nparents})
   end
 
 
