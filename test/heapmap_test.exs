@@ -39,11 +39,7 @@ defmodule Astar.HeapMap.Test do
     assert h |> get_by_key(:k) == :v
   end
 
-  test "delete can recover after pop" do
-    {_,_,h} = new |> add(1,:k,:v) |> pop
-  end
-
- test "mapping returns some internal key and a value" do
+  test "mapping returns some internal key and a value" do
     assert {_,:v} = new |> add(1,:k,:v) |> mapping(:k)
   end
 
