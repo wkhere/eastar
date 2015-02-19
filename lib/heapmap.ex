@@ -35,8 +35,7 @@ defmodule Astar.HeapMap do
 
   @spec mapping(t, key) :: {token | nil, val | nil}
   def mapping(hmap(dict: dict), key) do
-    res = {_token, val} = Dict.get(dict, key)
-    if val==nil, do: {nil, nil}, else: res
+    Dict.get(dict, key) || {nil, nil}
   end
 
   @spec delete(t, token, key) :: t
