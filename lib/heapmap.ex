@@ -30,7 +30,7 @@ defmodule Astar.HeapMap do
   @spec pop(t) :: {pri, key, t}
   def pop(hmap(tree: tree, dict: dict)) do
     {{pri,_ref}, key, tree1} = :gb_trees.take_smallest(tree)
-    {pri, key, hmap(tree: tree1, dict: Dict.delete(dict, key))}
+    {pri, key, hmap(tree: tree1, dict: dict)}
   end
 
   @spec mapping(t, key) :: {token | nil, val | nil}

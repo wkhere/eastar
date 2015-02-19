@@ -33,7 +33,17 @@ defmodule Astar.HeapMap.Test do
     assert {3,_,_} = h |> pop
   end
 
-  test "mapping returns some internal key and a value" do
+  test "pop leaves mapping intact" do
+    {_,_,h} = new |> add(1,:k,:v) |> pop
+    assert h |> mapping(:k) |> elem(1) == :v
+    assert h |> get_by_key(:k) == :v
+  end
+
+  test "delete can recover after pop" do
+    {_,_,h} = new |> add(1,:k,:v) |> pop
+  end
+
+ test "mapping returns some internal key and a value" do
     assert {_,:v} = new |> add(1,:k,:v) |> mapping(:k)
   end
 
