@@ -1,7 +1,7 @@
-defmodule Astar.GeoExample.Test do
+defmodule Astar.Geo.Test do
   use ExUnit.Case
   import Astar
-  import Astar.GeoExample
+  import Astar.Examples.Geo
 
   test "empty path" do
     for n <- all_nodes, do: 

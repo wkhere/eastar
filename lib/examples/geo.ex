@@ -1,4 +1,4 @@
-defmodule Astar.GeoExample do
+defmodule Astar.Examples.Geo do
 
   defmodule Nodes do
     def walcz,    do: {53.283853, 16.470173}
