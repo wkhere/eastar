@@ -1,6 +1,7 @@
 %{"dialyze": {:hex, :dialyze, "0.1.3"},
   "excoveralls": {:hex, :excoveralls, "0.3.6"},
   "exjsx": {:hex, :exjsx, "3.1.0"},
+  "heaps": {:git, "http://github.com/herenowcoder/erl-heaps", "826e64692ff15ee03b61e1f54d93b6077ccb3936", []},
   "jsx": {:hex, :jsx, "2.4.0"},
   "reprise": {:hex, :reprise, "0.3.0"},
-  "vger": {:git, "git://github.com/herenowcoder/vger.git", "6a55714bac421d6c17580dfd2be825db5cacc4c9", []}}
+  "vger": {:git, "git://github.com/herenowcoder/vger.git", "bba206cf512bdedcd1b2f6f2cafdd36d11372d47", []}}
