@@ -6,8 +6,9 @@ eastar
 
 Elixir rewrite of A\* graph pathfinding code.
 
-This version aims to be as generic as possible, abstracting away the graph info
-and the heuristic distance - you provide both as funtions.
+This version aims to be as generic as possible, abstracting away
+the graph environment: nodes connectivity, distance & H-metric -
+you provide them as functions.
 
 If you like some references to the literature,
 you can think of it as the *star of Ea*.
