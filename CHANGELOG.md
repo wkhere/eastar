@@ -1,4 +1,5 @@
 ### v0.3.2-dev
+* more tests
 
 ### v0.3.1 (2015-02-20)
 * Hex-ify

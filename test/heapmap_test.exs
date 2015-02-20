@@ -6,6 +6,10 @@ defmodule Astar.HeapMap.Test do
     assert new |> empty?
   end
 
+  test "can't add same key twice" do
+    assert_raise MatchError, fn-> new |> add(1,:k,:v1) |> add(2,:k,:v2) end
+  end
+
   test "add + pop gives empty heap" do
     h0 = new
     {_,_,h} = h0 |> add(1,:k,:v) |> pop
