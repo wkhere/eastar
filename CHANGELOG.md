@@ -1,5 +1,6 @@
 
 ### v0.3.1-dev
+* Hex-ify
 
 ### v0.3.0 (2015-02-20)
 * fix HeapMap.mapping bug
