@@ -3,7 +3,7 @@ defmodule Eastar.Mixfile do
 
   def project do
     [ app: :eastar,
-      version: "0.3.0",
+      version: "0.3.1-dev",
       elixir: "~> 1.0.2",
       deps: deps,
       test_coverage: [tool: ExCoveralls]
