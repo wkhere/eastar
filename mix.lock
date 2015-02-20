@@ -2,4 +2,5 @@
   "excoveralls": {:hex, :excoveralls, "0.3.6"},
   "exjsx": {:hex, :exjsx, "3.1.0"},
   "jsx": {:hex, :jsx, "2.4.0"},
-  "reprise": {:hex, :reprise, "0.3.0"}}
+  "reprise": {:hex, :reprise, "0.3.0"},
+  "vger": {:git, "git://github.com/herenowcoder/vger.git", "6a55714bac421d6c17580dfd2be825db5cacc4c9", []}}
