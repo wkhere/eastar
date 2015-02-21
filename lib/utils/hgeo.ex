@@ -1,4 +1,10 @@
-defmodule Astar.H.Geo do
+defmodule Astar.Utils.H.Geo do
+  @moduledoc """
+  Exposes H-function as a shortest distance between
+  two points on Earth globe, plus a number of conversion
+  functions.
+  """
+
   import :math
 
   @pi_by_180    pi/180

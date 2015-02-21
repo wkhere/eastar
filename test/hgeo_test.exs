@@ -1,6 +1,6 @@
 defmodule Astar.H.Geo.Test do
   use ExUnit.Case
-  import Astar.H.Geo
+  import Astar.Utils.H.Geo
 
   # Expected values in this testcase are taken from the web script:
   # http://www.movable-type.co.uk/scripts/latlong.html

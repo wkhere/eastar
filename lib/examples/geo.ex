@@ -23,7 +23,7 @@ defmodule Astar.Examples.Geo do
 
 
   def h(node1, node2), do:
-    Astar.H.Geo.h(coords(node1), coords(node2))
+    Astar.Utils.H.Geo.h(coords(node1), coords(node2))
 
 
   def env(), do:
