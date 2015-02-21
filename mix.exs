@@ -35,10 +35,10 @@ defmodule Eastar.Mixfile do
     """
 
   defp deps, do: [
-    {:excoveralls, "== 0.3.6",  only: :test},
-    {:dialyze,     "== 0.1.3",  only: :dev},
-    {:reprise,     "== 0.3.0",  only: :dev},
-    {:exprof,      "== 0.2.0",  only: :dev},
-    {:vger,   github: "herenowcoder/vger", only: [:dev, :test]},
+    {:excoveralls,  "== 0.3.6",   only: :test},
+    {:dialyze,      "== 0.1.3",   only: :dev},
+    {:reprise,      "== 0.3.0",   only: :dev},
+    {:exprof,       "== 0.2.0",   only: :dev},
+    {:vger, github: "herenowcoder/vger", only: [:dev, :test]},
   ]
 end
