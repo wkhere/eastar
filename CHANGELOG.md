@@ -1,4 +1,6 @@
 ### v0.3.3-dev
+* impl: updater moved to separate compiled fun, giving a tiny speedup
+* vger tests rely on test data from upstream
 
 ### v0.3.2 (2015-02-21)
 * cosmetic, tests for pathological cases, ex_doc support
