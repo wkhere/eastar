@@ -1,5 +1,5 @@
-### v0.3.2-dev
-* more tests
+### v0.3.2 (2015-02-21)
+* cosmetic, tests for pathological cases, ex_doc support
 
 ### v0.3.1 (2015-02-20)
 * Hex-ify

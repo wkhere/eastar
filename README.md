@@ -15,5 +15,12 @@ you provide them as functions.
 If you like some references to the literature,
 you can think of it as the *star of Ea*.
 
+### usage
+
+API is described at [hexdocs](http://hexdocs.pm/eastar/).
+
+Look at examples and tests to see how graph environment can be set up.
+
+Enjoy!
 
 [A\*]:      http://en.wikipedia.org/wiki/A*_search_algorithm
