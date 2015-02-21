@@ -51,7 +51,8 @@ defmodule Astar do
 
             if gy do
               if est_g < gy do
-                update(h, x, y, goal, est_g, openmap |> HeapMap.delete(ty, y), parents)
+                openmap = openmap |> HeapMap.delete(ty, y)
+                update(h, x, y, goal, est_g, openmap, parents)
               else
                 continue
               end
