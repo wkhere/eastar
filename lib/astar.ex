@@ -49,22 +49,14 @@ defmodule Astar do
 
             {ty, gy} = HeapMap.mapping(openmap,y)
 
-            updater = fn(openmap) ->
-              nparents = Dict.put(parents, y, x)
-              new_gy = est_g
-              fy = h.(y, goal) + new_gy
-              nopenmap = openmap |> HeapMap.add(fy, y, new_gy)
-              {nopenmap, nparents}
-            end
-
             if gy do
               if est_g < gy do
-                updater.(openmap |> HeapMap.delete(ty, y))
+                update(h, x, y, goal, est_g, openmap |> HeapMap.delete(ty, y), parents)
               else
                 continue
               end
             else
-              updater.(openmap)
+              update(h, x, y, goal, est_g, openmap, parents)
             end
           end
         end
@@ -72,6 +64,13 @@ defmodule Astar do
         loop(env, goal, openmap, closedset, parents)
       end
     end
+  end
+
+  defp update(h, x, y, goal, new_gy, openmap, parents) do
+    nparents = Dict.put(parents, y, x)
+    fy = h.(y, goal) + new_gy
+    nopenmap = openmap |> HeapMap.add(fy, y, new_gy)
+    {nopenmap, nparents}
   end
 
 
