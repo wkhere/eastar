@@ -3,15 +3,11 @@ defmodule Astar.Vger.Bench do
 
   defp setup do
     :vger_map.setup
-    drive = :ion
-    {
-      &:vger_map.nb_memo/1,
-      :vger_map.gen_dist(drive),
-      :vger_map.gen_h(drive)
-    }
+    {env, start, goal, _} = :vger_map.well_known_path
+    [env, start, goal]
   end
 
-  bench "vger well known path", [env: setup] do
-    Astar.astar(env, {:enioar,1,1}, {:enioar,20,7})
+  bench "vger well known path", [params: setup] do
+    apply &Astar.astar/3, params
   end
 end

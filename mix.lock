@@ -8,4 +8,4 @@
   "heaps": {:git, "http://github.com/herenowcoder/erl-heaps", "0b64fea51bfb287f712443f54a84ffeea557f66d", []},
   "jsx": {:hex, :jsx, "2.4.0"},
   "reprise": {:hex, :reprise, "0.3.0"},
-  "vger": {:git, "git://github.com/herenowcoder/vger.git", "9b9fc34876db673d40e2e25e49ca82904a806050", []}}
+  "vger": {:git, "git://github.com/herenowcoder/vger.git", "b370391163714f9787eefc1c55b6c72d34d1043c", []}}
