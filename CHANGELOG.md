@@ -1,3 +1,5 @@
+### v0.3.4-dev
+
 ### v0.3.3 (2015-02-21)
 * impl: updater moved to separate compiled fun, giving a tiny speedup
 * vger tests rely on test data from upstream
