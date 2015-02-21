@@ -8,6 +8,7 @@ defmodule Eastar.Mixfile do
       package: package,
       description: description,
       deps: deps,
+      docs: [main: Astar],
       test_coverage: [tool: ExCoveralls]
     ]
   end
@@ -36,6 +37,7 @@ defmodule Eastar.Mixfile do
 
   defp deps, do: [
     {:excoveralls,  "== 0.3.6",   only: :test},
+    {:ex_doc,       "~> 0.7.1",   only: :dev},
     {:dialyze,      "== 0.1.3",   only: :dev},
     {:reprise,      "== 0.3.0",   only: :dev},
     {:exprof,       "== 0.2.0",   only: :dev},
