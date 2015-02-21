@@ -41,6 +41,7 @@ defmodule Eastar.Mixfile do
     {:dialyze,      "== 0.1.3",   only: :dev},
     {:reprise,      "== 0.3.0",   only: :dev},
     {:exprof,       "== 0.2.0",   only: :dev},
+    {:benchfella, github: "alco/benchfella", only: :dev},
     {:vger, github: "herenowcoder/vger", only: [:dev, :test]},
   ]
 end
