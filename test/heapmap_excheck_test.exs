@@ -12,7 +12,7 @@ defmodule Astar.HeapMap.ExCheck.Test do
     end
   end
 
-  property "pop gives item with smallest priority" do
+  property "pop gives item with smallest priority [2 items]" do
     h0 = new
     for_all {pri1, pri2, k1, k2, v} in
       such_that({_, _, k1, k2, _} in {int, int, any, any, any}
@@ -22,6 +22,18 @@ defmodule Astar.HeapMap.ExCheck.Test do
         h = h0 |> add(pri1, k1, v) |> add(pri2, k2, v)
         {pri, k, _} = h |> pop
         pri == pri1 and k == k1
+      end
+    end
+  end
+
+  property "pop gives item with smallest priority [N items]" do
+    h0 = new
+    for_all l in list(int) do
+      implies l != [] and l == Enum.uniq(l) do
+        pmin = Enum.min(l)
+        h = l |> Enum.reduce h0, &(&2 |> add(&1,&1,:v))
+        {p, _, _} = h |> pop
+        p == pmin
       end
     end
   end
