@@ -1,5 +1,5 @@
 todo:
-- [ ] profiling?
+- [x] profiling
 - [x] dev benchfella
 - [x] move updater to compiled fun and do the benchmarks
 - [x] play with excheck
