@@ -17,7 +17,7 @@ which ctags >/dev/null && ctags -R $ctags_dirs &
 [[ $1 == doc* ]] && mix docs
 [[ $1 == dia* ]] && time nice mix dialyze --no-check  --error-handling --race-conditions --underspecs --unmatched-returns
 if [[ $1 == cov* ]]; then
-    echo -n "Running coverage.. "; MIX_ENV=test mix coveralls
+    echo -n "Running coverage.. "; mix test --cover
 else
     echo -n "Running tests.. "; mix test
 fi
