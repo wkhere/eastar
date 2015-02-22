@@ -1,4 +1,4 @@
-### v0.3.4-dev
+### v0.3.4 (2015-02-22)
 * heapmap impl: switch from recordp to struct
 * warmly welcoming excheck tests!
 
