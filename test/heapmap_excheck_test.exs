@@ -29,9 +29,9 @@ defmodule Astar.HeapMap.ExCheck.Test do
   property "pop gives item with smallest priority [N items]" do
     h0 = new
     for_all l in list(int) do
-      implies l != [] and l == Enum.uniq(l) do
+      implies l != [] do
         pmin = Enum.min(l)
-        h = for i <- l, into: h0, do: {i,i,:v}
+        h = for i <- l, into: h0, do: {i, make_ref, :v}
         {p, _, _} = h |> pop
         p == pmin
       end
