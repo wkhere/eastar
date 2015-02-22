@@ -31,7 +31,7 @@ defmodule Astar.HeapMap.ExCheck.Test do
     for_all l in list(int) do
       implies l != [] and l == Enum.uniq(l) do
         pmin = Enum.min(l)
-        h = l |> Enum.reduce h0, &(&2 |> add(&1,&1,:v))
+        h = for i <- l, into: h0, do: {i,i,:v}
         {p, _, _} = h |> pop
         p == pmin
       end
