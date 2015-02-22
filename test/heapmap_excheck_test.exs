@@ -7,7 +7,8 @@ defmodule Astar.HeapMap.ExCheck.Test do
     h0 = new
     for_all {pri, k, v} in {int, any, any} do
       h = h0 |> add(pri, k, v)
-      (h |> get_by_key(k) == v) and (h |> mapping(k) |> elem(1) == v)
+      h |> get_by_key(k) == v and
+      h |> mapping(k) |> elem(1) == v
     end
   end
 
