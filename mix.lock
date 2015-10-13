@@ -6,7 +6,7 @@
   "exjsx": {:hex, :exjsx, "3.1.0"},
   "exprintf": {:hex, :exprintf, "0.1.6"},
   "exprof": {:hex, :exprof, "0.2.0"},
-  "heaps": {:git, "http://github.com/herenowcoder/erl-heaps", "0b64fea51bfb287f712443f54a84ffeea557f66d", []},
+  "heaps": {:git, "http://github.com/herenowcoder/erl-heaps", "189071563ef72902d218b372086d09e3cc2054ed", []},
   "jsx": {:hex, :jsx, "2.4.0"},
   "reprise": {:hex, :reprise, "0.3.0"},
   "triq": {:git, "git://github.com/krestenkrab/triq.git", "2fe1529bc1460e0a8cd356ef7a8fda9e43120445", []},
