@@ -8,6 +8,6 @@
   "exprof": {:hex, :exprof, "0.2.0"},
   "heaps": {:git, "http://github.com/herenowcoder/erl-heaps", "189071563ef72902d218b372086d09e3cc2054ed", []},
   "jsx": {:hex, :jsx, "2.4.0"},
-  "reprise": {:hex, :reprise, "0.3.0"},
+  "reprise": {:hex, :reprise, "0.4.1"},
   "triq": {:git, "git://github.com/krestenkrab/triq.git", "2fe1529bc1460e0a8cd356ef7a8fda9e43120445", []},
   "vger": {:git, "git://github.com/herenowcoder/vger.git", "b370391163714f9787eefc1c55b6c72d34d1043c", []}}

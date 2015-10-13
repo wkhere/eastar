@@ -41,7 +41,7 @@ defmodule Eastar.Mixfile do
     {:excoveralls,  "== 0.3.6",   only: :test},
     {:ex_doc,       "~> 0.7.1",   only: :dev},
     {:dialyze,      "== 0.1.3",   only: :dev},
-    {:reprise,      "== 0.3.0",   only: :dev},
+    {:reprise,      "~> 0.4.0",   only: :dev},
     {:exprof,       "== 0.2.0",   only: :dev},
     {:excheck,      "== 0.2.1",   only: [:dev, :test]},
     {:triq, github: "krestenkrab/triq", only: [:dev, :test]},
