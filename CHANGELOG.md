@@ -1,4 +1,6 @@
-### v0.3.5-dev
+### v0.3.5 (2015-10-14)
+
+* adapt to Elixir 1.1 and OTP 18
 
 ### v0.3.4 (2015-02-22)
 * heapmap impl: switch from recordp to struct
