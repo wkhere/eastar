@@ -1,3 +1,5 @@
+### v0.3.6-dev
+
 ### v0.3.5 (2015-10-14)
 
 * adapt to Elixir 1.1 and OTP 18
