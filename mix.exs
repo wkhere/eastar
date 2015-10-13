@@ -21,7 +21,7 @@ defmodule Eastar.Mixfile do
   end
 
   defp package, do: [
-    contributors: ["Wojciech Kaczmarek"],
+    maintainers: ["Wojciech Kaczmarek"],
     licenses:     ["GPLv2"],
     description:  description,
     links:        %{"GitHub" => "http://github.com/herenowcoder/eastar",
