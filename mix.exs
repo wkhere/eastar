@@ -17,6 +17,7 @@ defmodule Eastar.Mixfile do
   def application do
     apps = Mix.env == :dev && [:reprise] || []
     [applications: apps,
+      mod: {Astar.App, []},
       description: 'A*']
   end
 
