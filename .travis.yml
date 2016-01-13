@@ -4,11 +4,11 @@ elixir:
   - 1.1.1
 otp_release:
   - 17.4
-  - 18.0
+  - 18.2.1
 matrix:
   include:
     - elixir: 1.2.0
-      otp_release: 18.0
+      otp_release: 18.2.1
 
 env: MIX_ENV=test
 after_success:
