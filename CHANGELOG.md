@@ -1,4 +1,7 @@
-### v0.3.6-dev
+### v0.3.6 (2016-01-14)
+
+* prepare for future full app (now just childless supervisor)
+* for anyone who cares, change license to BSD
 
 ### v0.3.5 (2015-10-14)
 
