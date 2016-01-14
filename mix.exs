@@ -23,7 +23,7 @@ defmodule Eastar.Mixfile do
 
   defp package, do: [
     maintainers: ["Wojciech Kaczmarek"],
-    licenses:     ["GPLv2"],
+    licenses:     ["BSD"],
     description:  description,
     links:        %{"GitHub" => "http://github.com/herenowcoder/eastar",
                     "HexDocs"   => "http://hexdocs.pm/eastar",
