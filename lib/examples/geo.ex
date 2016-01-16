@@ -28,6 +28,8 @@ defmodule Astar.Examples.Geo do
 
   @m __MODULE__
 
+  @spec env() :: Astar.env
+
   def env(), do:
     {&@m.nbs/1, &@m.dist/2, &@m.h/2}
 end
