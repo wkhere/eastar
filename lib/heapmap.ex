@@ -16,9 +16,8 @@ defmodule Astar.HeapMap do
   def new(), do: %@h{}
 
   @spec empty?(t) :: boolean
-  def empty?(%@h{tree: tree}) do
-    :gb_trees.size(tree) == 0
-  end
+  def empty?(%@h{tree: {0, _}}), do: true
+  def empty?(%@h{}), do: false
 
   @spec add(t, pri, key, val) :: t
   def add(%@h{tree: tree, dict: dict}, pri, key, val) do
@@ -49,6 +48,14 @@ defmodule Astar.HeapMap do
   def get_by_key(%@h{dict: dict}, key) do
     {_token, val} = Dict.get(dict, key)
     val
+  end
+
+  defmodule Pattern do
+    defmacro empty do
+      quote do
+        %Astar.HeapMap{tree: {0, _}}
+      end
+    end
   end
 end
 

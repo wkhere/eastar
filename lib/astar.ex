@@ -1,5 +1,6 @@
 defmodule Astar do
   alias Astar.HeapMap
+  require HeapMap.Pattern
 
   @moduledoc """
     A* graph pathfinding.
@@ -32,11 +33,12 @@ defmodule Astar do
     loop(env, goal, openmap, HashSet.new, HashDict.new)
   end
 
+
   @spec loop(env, vertex, HeapMap.t, Set.t, Dict.t) :: [vertex]
 
+  defp loop(_, _, HeapMap.Pattern.empty, _, _), do: []
+
   defp loop({nbs, dist, h}=env, goal, openmap, closedset, parents) do
-    if HeapMap.empty?(openmap) do []
-    else
       {_fx, x, openmap} = HeapMap.pop(openmap)
       if x == goal do
         cons_path(parents, goal)
@@ -68,7 +70,6 @@ defmodule Astar do
 
         loop(env, goal, openmap, closedset, parents)
       end
-    end
   end
 
   defp update(h, x, y, goal, new_gy, openmap, parents) do
