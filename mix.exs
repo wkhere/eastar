@@ -40,7 +40,7 @@ defmodule Eastar.Mixfile do
 
   defp deps, do: [
     {:excoveralls,  "== 0.3.6",   only: :test},
-    {:ex_doc,       "~> 0.7.1",   only: :dev},
+    {:ex_doc,       "~> 0.11",    only: :dev},
     {:dialyze,      "== 0.2.0",   only: :dev},
     {:reprise,      "~> 0.4.0",   only: :dev},
     {:exprof,       "== 0.2.0",   only: :dev},
