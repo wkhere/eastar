@@ -1,4 +1,7 @@
-### v0.3.7-dev
+### v0.3.7 (2016-01-16)
+
+* update dev deps to nicely play with Elixir 1.2
+* a tiny doc polishing
 
 ### v0.3.6 (2016-01-14)
 
