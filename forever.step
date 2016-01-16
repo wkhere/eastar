@@ -6,7 +6,7 @@ if [ "$1" == files ]; then
     exit
 fi
 
-ctags_dirs="."
+ctags_dirs="lib"
 for d in $(dirname $(which erl))/../lib/{kernel*,stdlib*}/src ; do ctags_dirs="$ctags_dirs $d"; done
 if [ -n "$Elixir_src" ]; then
     ctags_dirs="$ctags_dirs $Elixir_src/lib/elixir/lib"
