@@ -1,6 +1,10 @@
 defmodule Astar do
   alias Astar.HeapMap
 
+  @moduledoc """
+    A* graph pathfinding.
+  """
+
   @type  vertex     :: any
   @type  nbs_f      :: ((vertex) -> [vertex])
   @type  distance_f :: ((vertex,vertex) -> non_neg_integer)
@@ -8,7 +12,7 @@ defmodule Astar do
 
 
   @doc """
-  A* path finding.
+  Find path between two vertices in a directed weighted graph.
 
   * `env`   - a graph "environment" - the tuple `{nbs, dist, h}` where
     each element is a function:
