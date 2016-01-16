@@ -26,6 +26,8 @@ defmodule Astar.Examples.Geo do
     Astar.Utils.H.Geo.h(coords(node1), coords(node2))
 
 
+  @m __MODULE__
+
   def env(), do:
-    {&__MODULE__.nbs/1, &__MODULE__.dist/2, &__MODULE__.h/2}
+    {&@m.nbs/1, &@m.dist/2, &@m.h/2}
 end
