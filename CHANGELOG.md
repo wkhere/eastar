@@ -1,4 +1,7 @@
-### v0.3.8-dev
+### v0.3.8 (2016-01-21)
+
+* expose pattern for empty heapmap and use it
+* dev goodies: specs, bench, new reloader
 
 ### v0.3.7 (2016-01-16)
 
