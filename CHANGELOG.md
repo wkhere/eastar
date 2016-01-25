@@ -1,3 +1,5 @@
+### v0.3.9-dev
+
 ### v0.3.8 (2016-01-21)
 
 * expose pattern for empty heapmap and use it
