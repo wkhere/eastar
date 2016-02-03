@@ -1,8 +1,8 @@
 eastar
 ======
 
-[![Build Status](https://travis-ci.org/herenowcoder/eastar.svg)](https://travis-ci.org/herenowcoder/eastar)
-[![Coverage Status](https://img.shields.io/coveralls/herenowcoder/eastar.svg)](https://coveralls.io/r/herenowcoder/eastar)
+[![Circle CI](https://circleci.com/gh/herenowcoder/eastar.svg?style=shield)](https://circleci.com/gh/herenowcoder/eastar)
+[![Coverage Status](https://coveralls.io/repos/github/herenowcoder/eastar/badge.svg?branch=master)](https://coveralls.io/github/herenowcoder/eastar?branch=master)
 [![hex.pm version](https://img.shields.io/hexpm/v/eastar.svg)](https://hex.pm/packages/eastar)
 
 
