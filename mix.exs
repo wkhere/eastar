@@ -46,7 +46,7 @@ defmodule Eastar.Mixfile do
     {:exprof,       "== 0.2.0",   only: :dev},
     {:excheck,      "== 0.3.2",   only: [:dev, :test]},
     {:triq, github: "krestenkrab/triq", only: [:dev, :test]},
-    {:benchfella, github: "alco/benchfella",   only: :dev},
+    {:benchfella,   "== 0.3.1",   only: :dev},
     {:vger, github: "herenowcoder/vger", only: [:dev, :test]},
   ]
 end
