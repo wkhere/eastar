@@ -1,3 +1,6 @@
+### v0.4.1-dev
+
+
 ### v0.4.0 (2016-04-10)
 
 * use Map & MapSet internally instead of old Dict & Set
