@@ -2,11 +2,11 @@ defmodule Astar.HeapMap do
 
   defstruct \
     tree: :gb_trees.empty,
-    dict: HashDict.new
+    dict: Map.new
 
   @h __MODULE__
 
-  @opaque t       :: %@h{tree: :gb_trees.tree, dict: Dict.t}
+  @opaque t       :: %@h{tree: :gb_trees.tree, dict: Map.t}
   @type   pri     :: any
   @type   key     :: any
   @type   val     :: non_neg_integer
@@ -21,10 +21,10 @@ defmodule Astar.HeapMap do
 
   @spec add(t, pri, key, val) :: t
   def add(%@h{tree: tree, dict: dict}, pri, key, val) do
-    false = Dict.has_key?(dict, key)
+    false = Map.has_key?(dict, key)
     token = {pri, make_ref}
     %@h{tree: :gb_trees.insert(token, key, tree),
-        dict: Dict.put(dict, key, {token, val})}
+        dict: Map.put(dict, key, {token, val})}
   end
 
   @spec pop(t) :: {pri, key, t}
@@ -35,18 +35,18 @@ defmodule Astar.HeapMap do
 
   @spec mapping(t, key) :: {token | nil, val | nil}
   def mapping(%@h{dict: dict}, key) do
-    Dict.get(dict, key) || {nil, nil}
+    Map.get(dict, key) || {nil, nil}
   end
 
   @spec delete(t, token, key) :: t
   def delete(%@h{tree: tree, dict: dict}, token, key) do
     %@h{tree: :gb_trees.delete(token, tree),
-        dict: Dict.delete(dict, key)}
+        dict: Map.delete(dict, key)}
   end
 
   @spec get_by_key(t, key) :: val
   def get_by_key(%@h{dict: dict}, key) do
-    {_token, val} = Dict.get(dict, key)
+    {_token, val} = Map.get(dict, key)
     val
   end
 

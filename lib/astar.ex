@@ -30,11 +30,11 @@ defmodule Astar do
     openmap = HeapMap.new
               |> HeapMap.add(h.(start,goal), start, 0)
 
-    loop(env, goal, openmap, HashSet.new, HashDict.new)
+    loop(env, goal, openmap, MapSet.new, Map.new)
   end
 
 
-  @spec loop(env, vertex, HeapMap.t, Set.t, Dict.t) :: [vertex]
+  @spec loop(env, vertex, HeapMap.t, MapSet.t, Map.t) :: [vertex]
 
   defp loop(_, _, HeapMap.Pattern.empty, _, _), do: []
 
@@ -44,12 +44,12 @@ defmodule Astar do
         cons_path(parents, goal)
       else
 
-        closedset = Set.put(closedset, x)
+        closedset = MapSet.put(closedset, x)
 
         {openmap,parents} = Enum.reduce nbs.(x), {openmap,parents},
         fn(y, {openmap,parents}=continue) ->
 
-          if Set.member?(closedset, y) do continue
+          if MapSet.member?(closedset, y) do continue
           else
             est_g = HeapMap.get_by_key(openmap,x) + dist.(x,y)
 
@@ -73,7 +73,7 @@ defmodule Astar do
   end
 
   defp update(h, x, y, goal, new_gy, openmap, parents) do
-    nparents = Dict.put(parents, y, x)
+    nparents = Map.put(parents, y, x)
     fy = h.(y, goal) + new_gy
     nopenmap = openmap |> HeapMap.add(fy, y, new_gy)
     {nopenmap, nparents}
@@ -84,7 +84,7 @@ defmodule Astar do
 
   defp cons_path(parents, vertex), do: cons_path(parents, vertex, [])
   defp cons_path(parents, vertex, acc) do
-    parent = Dict.get(parents,vertex)
+    parent = Map.get(parents,vertex)
     if parent do
       cons_path(parents, parent, [vertex|acc])
     else acc
