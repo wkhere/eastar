@@ -3,8 +3,8 @@ defmodule Eastar.Mixfile do
 
   def project do
     [ app: :eastar,
-      version: "0.3.9-dev",
-      elixir: "~> 1.0",
+      version: "0.4.0-dev",
+      elixir: "~> 1.2",
       package: package,
       description: description,
       deps: deps,
