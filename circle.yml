@@ -1,7 +1,7 @@
 machine:
   environment:
     ERLANG_VER: 18.1
-    ELIXIR_VER: 1.2.2
+    ELIXIR_VER: 1.2.4
     MIX_ENV:    test
     PATH:       $HOME/elixir/$ELIXIR_VER/bin:$HOME/erlang/$ERLANG_VER/bin:$PATH
 
