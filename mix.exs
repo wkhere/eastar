@@ -3,7 +3,7 @@ defmodule Eastar.Mixfile do
 
   def project do
     [ app: :eastar,
-      version: "0.4.0-dev",
+      version: "0.4.0",
       elixir: "~> 1.2",
       package: package,
       description: description,

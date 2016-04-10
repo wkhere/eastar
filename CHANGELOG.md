@@ -1,4 +1,8 @@
-### v0.3.9-dev
+### v0.4.0 (2016-04-10)
+
+* use Map & MapSet internally instead of old Dict & Set
+* above is faster by 33%
+* this requires Elixir 1.2.x
 
 ### v0.3.8 (2016-01-21)
 
