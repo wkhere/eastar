@@ -1,5 +1,6 @@
-### v0.4.1-dev
+### v0.4.1 (2016-08-31)
 
+* restrict to Elixir 1.2.x (typespec issues on 1.3)
 
 ### v0.4.0 (2016-04-10)
 
