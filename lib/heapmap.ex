@@ -4,48 +4,48 @@ defmodule Astar.HeapMap do
     tree: :gb_trees.empty,
     dict: Map.new
 
-  @h __MODULE__
+  alias __MODULE__, as: H
 
-  @opaque t       :: %@h{tree: :gb_trees.tree, dict: Map.t}
+  @opaque t       :: %H{tree: :gb_trees.tree, dict: Map.t}
   @type   pri     :: any
   @type   key     :: any
   @type   val     :: non_neg_integer
   @opaque token   :: {pri, any}
 
   @spec new() :: t
-  def new(), do: %@h{}
+  def new(), do: %H{}
 
   @spec empty?(t) :: boolean
-  def empty?(%@h{tree: {0, _}}), do: true
-  def empty?(%@h{}), do: false
+  def empty?(%H{tree: {0, _}}), do: true
+  def empty?(%H{}), do: false
 
   @spec add(t, pri, key, val) :: t
-  def add(%@h{tree: tree, dict: dict}, pri, key, val) do
+  def add(%H{tree: tree, dict: dict}, pri, key, val) do
     false = Map.has_key?(dict, key)
     token = {pri, make_ref}
-    %@h{tree: :gb_trees.insert(token, key, tree),
+    %H{tree: :gb_trees.insert(token, key, tree),
         dict: Map.put(dict, key, {token, val})}
   end
 
   @spec pop(t) :: {pri, key, t}
-  def pop(%@h{tree: tree} = self) do
+  def pop(%H{tree: tree} = self) do
     {{pri,_ref}, key, tree1} = :gb_trees.take_smallest(tree)
     {pri, key, %{self | tree: tree1}}
   end
 
   @spec mapping(t, key) :: {token | nil, val | nil}
-  def mapping(%@h{dict: dict}, key) do
+  def mapping(%H{dict: dict}, key) do
     Map.get(dict, key) || {nil, nil}
   end
 
   @spec delete(t, token, key) :: t
-  def delete(%@h{tree: tree, dict: dict}, token, key) do
-    %@h{tree: :gb_trees.delete(token, tree),
+  def delete(%H{tree: tree, dict: dict}, token, key) do
+    %H{tree: :gb_trees.delete(token, tree),
         dict: Map.delete(dict, key)}
   end
 
   @spec get_by_key(t, key) :: val
-  def get_by_key(%@h{dict: dict}, key) do
+  def get_by_key(%H{dict: dict}, key) do
     {_token, val} = Map.get(dict, key)
     val
   end
