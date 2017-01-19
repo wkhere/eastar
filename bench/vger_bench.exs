@@ -7,11 +7,11 @@ defmodule Astar.Vger.Bench do
     [env, start, goal]
   end
 
-  bench "vger well known path using Eastar", [params: setup] do
+  bench "vger well known path using Eastar", [params: setup()] do
     apply &Astar.astar/3, params
   end
 
-  bench "vger well known path using Erlang ver", [params: setup] do
+  bench "vger well known path using Erlang ver", [params: setup()] do
     apply &:vger_map.astar/3, params
   end
 end
