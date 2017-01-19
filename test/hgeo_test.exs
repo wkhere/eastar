@@ -27,8 +27,8 @@ defmodule Astar.H.Geo.Test do
 
   test "distances between my example nodes" do
     import Astar.Examples.Geo.Nodes
-    assert h(walcz, poznan) |> prec(1) == 102.0
-    assert h(walcz, wwa)    |> prec(1) == 327.7
-    assert h(poznan, wwa)   |> prec(1) == 279.2
+    assert h(walcz(), poznan()) |> prec(1) == 102.0
+    assert h(walcz(), wwa())    |> prec(1) == 327.7
+    assert h(poznan(), wwa())   |> prec(1) == 279.2
   end
 end

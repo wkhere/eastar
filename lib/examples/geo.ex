@@ -10,7 +10,7 @@ defmodule Astar.Examples.Geo do
 
   def all_nodes, do: Nodes.__info__(:functions) |> Keyword.keys
 
-  def nbs(_node), do: all_nodes
+  def nbs(_node), do: all_nodes()
 
 
   def dist(node1, node2) # arbitrary distances - road kms or some foo

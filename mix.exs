@@ -4,9 +4,9 @@ defmodule Eastar.Mixfile do
   def project do
     [ app: :eastar,
       version: "0.4.2-dev",
-      package: package,
-      description: description,
-      deps: deps,
+      package: package(),
+      description: description(),
+      deps: deps(),
       docs: [main: Astar],
       test_coverage: [tool: ExCoveralls]
     ]
@@ -23,7 +23,7 @@ defmodule Eastar.Mixfile do
   defp package, do: [
     maintainers: ["Wojciech Kaczmarek"],
     licenses:     ["BSD"],
-    description:  description,
+    description:  description(),
     links:        %{"GitHub" => "http://github.com/herenowcoder/eastar",
                     "HexDocs"   => "http://hexdocs.pm/eastar",
                   },
@@ -43,7 +43,7 @@ defmodule Eastar.Mixfile do
     {:dialyze,      "== 0.2.0",   only: :dev},
     {:reprise,      "~> 0.5",     only: :dev},
     {:exprof,       "== 0.2.0",   only: :dev},
-    {:excheck,      "~> 0.5.1",   only: [:dev, :test]},
+    {:excheck,      "~> 0.5.3",   only: [:dev, :test]},
     {:triq, github: "triqng/triq", only: [:dev, :test]},
     {:benchfella,   "== 0.3.2",   only: :dev},
     {:vger, github: "herenowcoder/vger", only: [:dev, :test]},

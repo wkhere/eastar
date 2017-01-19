@@ -7,7 +7,7 @@ defmodule Astar.Utils.H.Geo do
 
   import :math
 
-  @pi_by_180    pi/180
+  @pi_by_180    pi()/180
   @earth_radius 6371
 
 

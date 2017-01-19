@@ -4,12 +4,12 @@ defmodule Astar.Geo.Test do
   import Astar.Examples.Geo
 
   test "empty path" do
-    for n <- all_nodes, do: 
-      assert astar(env, n, n) == []
+    for n <- all_nodes(), do: 
+      assert astar(env(), n, n) == []
   end
 
   test "path of len=1" do
-    assert astar(env, :walcz, :wwa)    == [:wwa]
-    assert astar(env, :wwa,   :walcz)  == [:walcz]
+    assert astar(env(), :walcz, :wwa)    == [:wwa]
+    assert astar(env(), :wwa,   :walcz)  == [:walcz]
   end
 end

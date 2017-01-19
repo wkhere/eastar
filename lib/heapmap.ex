@@ -22,7 +22,7 @@ defmodule Astar.HeapMap do
   @spec add(t, pri, key, val) :: t
   def add(%H{tree: tree, dict: dict}, pri, key, val) do
     false = Map.has_key?(dict, key)
-    token = {pri, make_ref}
+    token = {pri, make_ref()}
     %H{tree: :gb_trees.insert(token, key, tree),
         dict: Map.put(dict, key, {token, val})}
   end

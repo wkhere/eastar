@@ -1,3 +1,8 @@
+### v0.4.2-dev
+
+* update to Elixir 1.4.x
+* test on variety of OTP/Elixir versions via travis
+
 ### v0.4.1 (2016-08-31)
 
 * restrict to Elixir 1.2.x (typespec issues on 1.3)
