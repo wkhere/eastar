@@ -1,4 +1,4 @@
-### v0.4.2-dev
+### v0.4.2 (2017-01-19)
 
 * update to Elixir 1.4.x
 * test on variety of OTP/Elixir versions via travis
