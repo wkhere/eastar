@@ -43,7 +43,7 @@ defmodule Astar do
   defp loop({nbs, dist, h}=env, goal, openmap, closedset, parents) do
       {_fx, x, openmap} = HeapMap.pop(openmap)
       if has_reached_goal?(x, goal) do
-        cons_path(parents, goal)
+        cons_path(parents, x)
       else
 
         closedset = MapSet.put(closedset, x)
