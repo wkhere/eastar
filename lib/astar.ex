@@ -25,7 +25,7 @@ defmodule Astar do
      if current vertex is a goal
   """
 
-  @spec astar(env, vertex, vertex) :: [vertex]
+  @spec astar(env, vertex, vertex | (vertex->bool)) :: [vertex]
 
   def astar({_nbs, _dist, h}=env, start, goal) do
     openmap = HeapMap.new
