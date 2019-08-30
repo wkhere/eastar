@@ -21,7 +21,8 @@ defmodule Astar do
     * `dist`  - returns edge cost between two neighbor vertices
     * `h`     - returns estimated cost between two arbitrary vertices
   * `start` - starting vertex
-  * `goal`  - vertex we want to reach
+  * `goal`  - vertex we want to reach, or a function of arity 1 to check
+     if current vertex is a goal
   """
 
   @spec astar(env, vertex, vertex) :: [vertex]
