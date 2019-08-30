@@ -1,4 +1,5 @@
-%{"benchfella": {:hex, :benchfella, "0.3.2", "b9648e77fa8d8b8b9fe8f54293bee63f7de03909b3af6ab22a0e546716a396fb", [:mix], []},
+%{
+  "benchfella": {:hex, :benchfella, "0.3.2", "b9648e77fa8d8b8b9fe8f54293bee63f7de03909b3af6ab22a0e546716a396fb", [:mix], []},
   "certifi": {:hex, :certifi, "0.3.0", "389d4b126a47895fe96d65fcf8681f4d09eca1153dc2243ed6babad0aac1e763", [:rebar3], []},
   "dialyze": {:hex, :dialyze, "0.2.0", "ecabf292e9f4bd0f7d844981f899a85c0300b30ff2dd1cdfef0c81a6496466f1", [:mix], []},
   "ex_doc": {:hex, :ex_doc, "0.8.4", "c74a30b09627ff22a2bb7f75d3b75dec3aedb2bd434bb3009a73a40425c2315d", [:mix], [{:earmark, "~> 0.1.17 or ~> 0.2", [hex: :earmark, optional: true]}]},
@@ -14,5 +15,6 @@
   "mimerl": {:hex, :mimerl, "1.0.2", "993f9b0e084083405ed8252b99460c4f0563e41729ab42d9074fd5e52439be88", [:rebar3], []},
   "reprise": {:hex, :reprise, "0.5.1", "8b6e6266c46780e47f89e8e03e5fc945348dc0d5eb1e47b5ba017481d3a5f5dd", [:mix], []},
   "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5", "2e73e068cd6393526f9fa6d399353d7c9477d6886ba005f323b592d389fb47be", [:make], []},
-  "triq": {:git, "https://github.com/triqng/triq.git", "2c497398e020e06db8496f1d89f12481cc5adab9", []},
-  "vger": {:git, "https://github.com/herenowcoder/vger.git", "b370391163714f9787eefc1c55b6c72d34d1043c", []}}
+  "triq": {:hex, :triq, "1.3.0", "d9ed60f3cd2b6bacbb721bc9873e67e07b02e5b97c63d40db35b12670a7f1bf4", [:rebar3], [], "hexpm"},
+  "vger": {:git, "https://github.com/herenowcoder/vger.git", "b370391163714f9787eefc1c55b6c72d34d1043c", []},
+}
