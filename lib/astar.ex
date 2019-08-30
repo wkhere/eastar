@@ -33,6 +33,8 @@ defmodule Astar do
     loop(env, goal, openmap, MapSet.new, Map.new)
   end
 
+  defp has_reached_goal?(x, goal) when is_function(goal), do: goal.(x)
+  defp has_reached_goal?(x, goal), do: x == goal
 
   @spec loop(env, vertex, HeapMap.t, MapSet.t, Map.t) :: [vertex]
 
@@ -40,8 +42,8 @@ defmodule Astar do
 
   defp loop({nbs, dist, h}=env, goal, openmap, closedset, parents) do
       {_fx, x, openmap} = HeapMap.pop(openmap)
-      if x == goal do
-        cons_path(parents, goal)
+      if has_reached_goal?(x, goal) do
+        cons_path(parents, x)
       else
 
         closedset = MapSet.put(closedset, x)

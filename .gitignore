@@ -4,3 +4,4 @@
 /doc/
 /tags
 /bench/snapshots/
+.elixir_ls
