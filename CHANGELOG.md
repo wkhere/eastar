@@ -1,3 +1,7 @@
+### v0.5.0 (2019-08-30)
+
+* allow `goal` to be a function
+
 ### v0.4.3 (2019-08-30)
 
 * behave on Elixir 1.8,1.9
