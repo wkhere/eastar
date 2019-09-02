@@ -1,6 +1,6 @@
 ### v0.5.0 (2019-08-30)
 
-* allow `goal` to be a function
+* allow `goal` to be a function (contributed by whossname)
 
 ### v0.4.3 (2019-08-30)
 
