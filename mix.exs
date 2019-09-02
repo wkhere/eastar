@@ -24,7 +24,7 @@ defmodule Eastar.Mixfile do
     maintainers: ["Wojciech Kaczmarek"],
     licenses:     ["BSD"],
     description:  description(),
-    links:        %{"GitHub" => "http://github.com/herenowcoder/eastar",
+    links:        %{"GitHub" => "http://github.com/wkhere/eastar",
                     "HexDocs"   => "http://hexdocs.pm/eastar",
                   },
   ]
