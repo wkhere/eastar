@@ -1,3 +1,5 @@
+### v0.5.2-dev
+
 ### v0.5.1 (2019-09-02)
 
 * update metadata: copyright, hex links
