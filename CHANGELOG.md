@@ -1,3 +1,7 @@
+### v0.5.1 (2019-09-02)
+
+* update metadata: copyright, hex links
+
 ### v0.5.0 (2019-08-30)
 
 * allow `goal` to be a function (contributed by whossname)
