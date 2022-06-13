@@ -19,7 +19,7 @@ you can think of it as the *star of Ea*.
 
 API is described at [hexdocs](http://hexdocs.pm/eastar/).
 
-Look at examples and tests to see how graph environment can be set up.
+Look at examples and tests to see how the graph environment can be set up.
 
 Enjoy!
 
