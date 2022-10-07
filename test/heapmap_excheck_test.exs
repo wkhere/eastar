@@ -38,7 +38,7 @@ defmodule Astar.HeapMap.ExCheck.Test do
     end
   end
 
-  property "pop leaves mapping int()act" do
+  property "pop leaves mapping intact" do
     h0 = new()
     for_all {p1, p2, p3,  k1, k2, k3,  v1, v2, v3} in
       such_that({_, _, _,  k1, k2, k3,  _, _, _} 
